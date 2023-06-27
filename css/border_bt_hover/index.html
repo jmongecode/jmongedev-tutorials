@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border bottom hover effect</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Arial', sans-serif;
+        font-size: 38px;
+      }
+
+      nav {
+        padding: 60px 0;
+        color: white;
+        background-color: #121212;
+      }
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      li {
+        /* Edit these variables to control the border */
+        --border-color: tomato;
+        --border-width: 10px;
+        --border-height: 70%;
+        --border-gap: 20px;
+        --transition-duration: 0.6s;
+
+        background-image: linear-gradient(
+          var(--border-color),
+          var(--border-color)
+        );
+        background-size: 0% var(--border-width);
+        background-repeat: no-repeat;
+        transition: background-size var(--transition-duration);
+        padding-bottom: var(--border-gap);
+        cursor: pointer;
+        list-style-type: none;
+      }
+
+      .fromCenter {
+        background-position: 50% 100%;
+      }
+      .fromLeft {
+        background-position: 0 100%;
+      }
+      .fromRight {
+        background-position: 100% 100%;
+      }
+
+      li:hover {
+        background-size: var(--border-height) var(--border-width);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="fromCenter">Home</li>
+        <li class="fromLeft">About</li>
+        <li class="fromRight">Projects</li>
+        <li class="fromCenter">Contact</li>
+      </ul>
+    </nav>
+  </body>
+</html>
